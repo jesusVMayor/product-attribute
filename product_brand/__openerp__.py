@@ -44,10 +44,12 @@ To do / To come:
     """,
     'author': 'NetAndCo',
     'website': 'http://ww.netandco.net',
-    'depends': ['product'],
+    'depends': ['product',
+                'sale'],
     'data': [
         'product_brand_view.xml',
-        'security/ir.model.access.csv'
+        'security/ir.model.access.csv',
+        'report/sale_report_view.xml'
     ],
     'installable': True,
 }
