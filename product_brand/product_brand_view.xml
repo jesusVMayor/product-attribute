@@ -23,7 +23,7 @@
             <field name="name">product.brand.form</field>
             <field name="model">product.brand</field>
             <field name="arch" type="xml">
-                <form string="Product Brand" version="7.0">
+                <form string="Product Brand">
                   <sheet>
                       <field name="logo" widget="image" class="oe_avatar oe_left"/>
                       <div class="oe_title">
@@ -62,7 +62,7 @@
             <field name="model">product.product</field>
             <field name="inherit_id" ref="product.product_search_form_view"/>
             <field name="arch" type="xml">
-                <field name="categ_id" position="after">
+                <field name="product_tmpl_id" position="after">
                     <field name="product_brand_id"/>
                 </field>
                 <group string='Group by...' position="inside">
@@ -71,26 +71,16 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="normal_form_product_brand">
-           <field name="name">product.normal.form</field>
-           <field name="model">product.product</field>
-           <field name="inherit_id" ref="product.product_normal_form_view" />
-           <field name="arch" type="xml">
-                <div name="options" position="before">
-                    <label for="product_brand_id" class="oe_edit_only"/>
-                    <h2><field name="product_brand_id"/></h2>
-               </div>
-           </field>
-        </record>
 
         <record model="ir.ui.view" id="product_template_form_brand_add">
             <field name="name">product.template.product.form</field>
             <field name="model">product.template</field>
             <field name="inherit_id" ref="product.product_template_form_view" />
             <field name="arch" type="xml">
-                <field name="categ_id" position="after"  >
-                  <field name="product_brand_id" />
-                </field>
+                <div name="options" position="before"  >
+                    <label for="product_brand_id" class="oe_edit_only"/>
+                    <h2><field name="product_brand_id"/></h2>
+                </div>
               </field>
         </record>
 
